@@ -1,10 +1,15 @@
 import os
 from datetime import datetime
 from django.conf import settings
+from pathlib import Path
 
 # Update this path to match your current project structure
-DATA_DIR = r'./12Dec-Nifty'
-SPOT_CSV = r'./nifty_underlying.csv'
+print("Current director:",Path(__file__).resolve())
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+DATA_DIR = BASE_DIR / "12Dec-Nifty/"
+SPOT_CSV = BASE_DIR / "nifty_underlying.csv"
+
 # ...existing code...
 
 def list_option_files():
